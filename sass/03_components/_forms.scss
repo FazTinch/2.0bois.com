@@ -1,0 +1,173 @@
+.select2-container {
+	border: solid 1px #000;
+	height: em(40px);
+	line-height: em(40px);
+	overflow: hidden;
+	width: 100%;
+
+	a.select2-choice {
+		border: none;
+	}
+}
+
+.product_item {
+
+}
+
+	.product_item__wrap {
+
+	}
+
+		.input_qty__denomination {
+			border-top: 5px solid #000;
+			border-bottom: 5px solid #000;
+			border-left: 5px solid #000;
+			font-family: "liberator";
+			font-size: em(30px);
+			height: em(70px, 30px);
+			line-height: em(65px, 30px);
+			margin-bottom: em(15px, 30px);
+			padding: 0 em(30px, 30px) 0 em(25px, 30px);
+			position: relative;
+			text-align: center;
+			width: em(120px, 30px);
+
+			&:after {
+				background: #000;
+				content: "";
+				display: inline-block;
+				height: em(15px);
+				position: absolute;
+					bottom: 0;
+					right: 0;
+				width: 5px;
+			}
+		}
+
+		.product_quantity, .product_size {
+			display: flex;
+				align-items: center;
+				align-content: center;
+
+			input {
+				border-top: 5px solid #000;
+				border-bottom: 5px solid #000;
+				border-right: 5px solid #000;
+				border-left: none;
+				display: inline-block;
+				font-family: "liberator";
+				font-size: em(30px);
+				height: em(70px, 30px);
+				line-height: 1;
+				margin-bottom: em(15px, 30px);
+				padding: 0;
+				text-align: center;
+				width: em(80px, 30px);
+			}
+		}
+
+
+		.woocommerce-billing-fields {
+			display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+
+			h3 {
+				flex: 1 0 100%;
+			}
+
+			p {
+				display: flex;
+					flex-wrap: wrap;
+				flex: 1 0 100%;
+			}
+
+			label {
+				flex: 1 0 100%;
+			}
+		}
+
+.shop_table {
+	max-width: em(500px);
+	text-align: left;
+	width: 100%;
+
+	thead {
+		font-size: 1.2em;
+	}
+
+		tr {
+			border-top: 10px solid transparent;
+		}
+}
+
+	ul#shipping_method {
+		list-style: none outside;
+		margin: 0;
+		padding: 0;
+
+		input {
+
+		}
+
+		li {
+			margin: 0;
+			padding: .25em 0 .25em 22px;
+			text-indent: -22px;
+			list-style: none outside;
+
+			input {
+				height: 20px;
+				margin: 0;
+				vertical-align: middle;
+				width: 20px;
+			}
+
+			label {
+				display: inline;
+				vertical-align: middle;
+			}
+		}
+
+		.amount {
+			font-weight: 700;
+		}
+	}
+
+@media only screen and (min-width: em(800px)) {
+
+input, .select2-container {
+	max-width: em(100px);
+	width: 100%;
+}
+
+		.woocommerce-billing-fields {
+			display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-start;
+
+			h3 {
+				flex: 1 0 100%;
+			}
+
+			p {
+				display: flex;
+					flex-wrap: wrap;
+				flex: 0 1 33.333%;
+			}
+
+			input {
+				max-width: 75%;
+			}
+
+			label {
+				flex: 1 0 100%;
+			}
+		}
+
+		.woocommerce-billing-fields .select2-container {
+			max-width: 75%;
+			width: 100%;
+		}
+
+}

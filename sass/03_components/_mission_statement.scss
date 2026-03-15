@@ -1,0 +1,22 @@
+.mission_statement {
+	margin: 0 auto em(75px);
+	max-width: em(650px);
+	padding: 0 em(20px);
+	width: 100%;
+}
+
+	.mission_statement p {
+		@include fluid-type(320px, 540px, 30px, 45px);
+
+		text-align: center;
+	}
+
+@media only screen and (min-width: em(950px)) {
+
+	.mission_statement {
+		margin-top: em(-75px);
+		max-width: em(800px);
+		padding: em(50px);
+	}
+
+}

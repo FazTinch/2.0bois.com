@@ -1,0 +1,121 @@
+.overlay_open .screen_overlay {
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	    top: 0px;
+	    left: 0px;
+	    right: 0px;
+	    bottom: 0px;
+    transition: z-index 0 ease-out 0;
+    z-index: 21;
+}
+
+	.info_overlay_content {
+		background: #fff;
+		border: 20px solid $yellow;
+		margin: 10%;
+		max-width: em(800px);
+		opacity: 0;
+		padding: em(20px);
+		position: fixed;
+			top: em(50px);
+		text-align: center;
+		transition: opacity 200ms ease-out z-index 0 ease-out 500ms;
+		z-index: -1;
+	}
+	.overlay_open .info_overlay_content {
+		opacity: 1;
+		overflow: auto;
+		margin-bottom: em(50px);
+		position: absolute;
+			top: 0;
+		transition: opacity 500ms ease-out z-index 0 ease-out 0;
+		z-index: 22;
+	}
+
+		.info_overlay_content .close_button {
+			right: em(20px, 30px);
+		}
+
+		.info_overlay_content p {
+			font-size: em(27px);
+		}
+
+		.info_overlay_content a {
+			border-bottom: solid em(2px, 27px) #000;
+			font-weight: 400;
+			padding-bottom: 0;
+			transition: font 150ms;
+
+			&:hover {
+				font-weight: 700;
+				line-height: 0;
+			}
+		}
+
+		.info_overlay_content img {
+			display: inline-block;
+			margin: 0 auto;
+			max-width: em(80px);
+			width: 100%;
+		}
+		.info_overlay_content > img {
+			margin: em(60px) 0 0;
+		}
+
+		.info_overlay_content div {
+			margin-top: em(60px);
+			margin-bottom: em(60px);
+		}
+
+			.social_overlay {
+
+				a {
+					border-bottom: none;
+					margin-right: 10px;
+					margin-left: 10px;
+				}
+			}
+
+			.info_overlay_content div img {
+				max-width: em(30px);
+			}
+
+			.info_overlay_content button {
+				min-width: auto;
+				padding: 0;
+				position: absolute;
+					top: em(20px, 30px);
+					right: em(20px, 30px);
+			}
+
+@media only screen and (min-width: em(850px)) {
+
+.info_overlay_content {
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+		top: em(50px);
+		left: 0;
+		right: 0;
+	max-width: em(800px);
+	width: 100%;
+}
+
+}
+
+@media only screen and (min-width: em(1000px)) {
+
+.info_overlay_content {
+	padding: 0 em(50px);
+}
+
+	.info_overlay_content p {
+		font-size: em(32px);
+	}
+
+	.info_overlay_content > img {
+		margin-bottom: em(20px);
+	}
+
+}

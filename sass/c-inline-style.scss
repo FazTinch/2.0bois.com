@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "Jost";
+	src: url("../includes/jost-300-light.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@import "00_setup/mixins";
+@import "00_setup/variables";
+
+@import "01_global/reset";
+
+//@import "00_setup/patterns";
+@import "01_global/typography";
+@import "01_global/layout";
+
+//@import "03_components/_top_nav";
+//@import "03_components/_mission_statement";
+//@import "03_components/fifty_fifty";
+

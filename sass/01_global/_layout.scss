@@ -1,0 +1,320 @@
+html {
+	background: rgb(199,172,254);
+	background: linear-gradient(225deg, rgba(199,172,254,1) 0%, rgba(255,187,96,1) 100%);
+	height: 100%;
+	padding: $gap;
+}
+
+body {
+	display: flex;
+	height: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+div {
+	margin: auto;
+	max-width: 768px;
+	width: 100%;
+}
+
+	div.album {
+		box-shadow: $box_shadow;
+		cursor: pointer;
+	}
+
+		.album_wrap {
+			height: 0;
+			overflow: hidden;
+			padding-bottom: 100%;
+			position: relative;
+			max-width: 768px;
+
+			&.day {
+				background: rgb(199,172,254);
+				background: linear-gradient(225deg, rgba(199,172,254,1) 0%, rgba(255,187,96,1) 100%);
+
+				.bg_night {
+					opacity: 0;
+				}
+			}
+
+			&.night {
+				.bg_day {
+					opacity: 0;
+				}
+			}
+		}
+
+			.bg_day {
+				position: absolute;
+
+				img {
+					mix-blend-mode: multiply;
+				}
+			}
+
+			.bg_night {
+				position: relative;
+
+				img {
+					position: absolute;
+				}
+
+				img:nth-child(2) {
+					mix-blend-mode: color-dodge;
+				}
+			}
+
+			h1 {
+				margin: 0;
+				padding: 10% 4% 0;
+				position: absolute;
+				right: 0;
+				transition: width 150ms ease-out;
+				width: 100%;
+			}
+
+			.tracklist {
+				color: $white;
+				opacity: 0;
+				padding: 5%;
+				position: relative;
+				transform: translateY(-10px);
+				transition: opacity 0ms, transform 0ms;
+				z-index: 10;
+
+				h2 {
+					line-height: 1;
+					margin-top: 0.5em;
+					margin-bottom: 0.5em;
+
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
+
+			.notice {
+				display: flex;
+					align-items: center;
+					gap: 25px;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 25%;
+				position: absolute;
+					bottom: 5%;
+					left: 0;
+					right: 0;
+
+			}
+
+				.explicit {
+					svg path {
+						fill: $white;
+					}
+				}
+
+				.fomojis_logo {
+					mix-blend-mode: screen;
+
+					img {
+						filter: grayscale(100%) brightness(5) invert(1);
+						mix-blend-mode: invert;
+						transform: scale(2);
+					}
+				}
+
+				.lexicon_logo,
+				.tedy_icon {
+					display: none;
+					height: 0;
+					visibility: hidden;
+					width: 0;
+				}
+
+				.tedy_icon svg path {
+					fill: $white;
+				}
+
+			.catyright {
+				color: $white;
+				opacity: 0;
+				padding-left: 5%;
+				padding-right: 5%;
+				transform: translateY(-10px);
+				transition: opacity 0ms, transform 0ms;
+			}
+
+			.fomoji_914,
+			.fomoji_943,
+			.fomoji_112 {
+				img {
+					position: absolute;
+						bottom: -28%;
+					transform: scale(45%);
+				}
+			}
+
+			.fomoji_914,
+			.fomoji_943 {
+				img {
+					transition: all 250ms ease-out;
+				}
+			}
+
+			.day > .fomoji_112 {
+				img {
+					right: -5%;
+					top: -28%;
+					transform: rotate(180deg) scale(45%);
+					transition: position 250ms ease-out;
+
+					&:not(:first-of-type) {
+						animation: bobbing_112 3s ease-in-out infinite;
+					}
+				}
+			}
+
+
+			.day > .fomoji_914 {
+				img {
+					bottom: -32%;
+					left: -32%;
+					transform: rotate(35deg) scale(50%);
+
+					&:not(:first-of-type) {
+						animation: bobbing_914 3s ease-in-out infinite;
+					}
+				}
+			}
+
+
+			.day > .fomoji_943 {
+				img {
+					bottom: -32%;
+					right: -32%;
+					transform: rotate(-35deg) scale(50%);
+
+					&:not(:first-of-type) {
+						animation: bobbing_943 3s ease-in-out infinite;
+					}
+				}
+			}
+
+
+.night {
+			> h1 {
+				width: 26%;
+				padding: 5% 5% 0;
+			}
+
+			> .tracklist {
+				opacity: 1;
+				transform: translateY(0);
+				transition: opacity 350ms ease-in, transform 350ms ease-in;
+			}
+
+			> .notice {
+				margin: 0;
+				max-width: 50%;
+				padding-left: 5%;
+				padding-right: 5%;
+				position: relative;
+
+				.tedy_icon, .lexicon_logo {
+					display: inline-block;
+					height: initial;
+					visibility: visible;
+					width: 100%;
+				}
+			}
+
+			> .catyright {
+				opacity: 1;
+				transform: translateY(0);
+				transition: opacity 350ms ease-in, transform 350ms ease-in;
+			}
+
+			> .fomoji_112 {
+				img {
+					&:not(:first-of-type) {
+						animation: bobbing_112n 3s ease-in-out infinite;
+					}
+				}
+			}
+
+			> .fomoji_914 {
+				img {
+					left: -30%;
+
+					&:not(:first-of-type) {
+						animation: bobbing_914n 3s ease-in-out infinite;
+					}
+				}
+			}
+
+			> .fomoji_943 {
+				img {
+					right: -30%;
+
+					&:not(:first-of-type) {
+						animation: bobbing_943n 3s ease-in-out infinite;
+					}
+				}
+			}
+}
+
+@keyframes bobbing_112 {
+  0%, 100% {
+    transform: rotate(180deg) scale(45%) translateY(0);
+  }
+  50% {
+    transform: rotate(180deg) scale(45%) translateY(-10px);
+  }
+}
+
+@keyframes bobbing_914 {
+  0%, 100% {
+    transform: rotate(35deg) scale(50%) translateY(0);
+  }
+  50% {
+    transform: rotate(35deg) scale(50%) translateY(-10px);
+  }
+}
+
+@keyframes bobbing_943 {
+  0%, 100% {
+    transform: rotate(-35deg) scale(50%) translateY(0);
+  }
+  50% {
+    transform: rotate(-35deg) scale(50%) translateY(-10px);
+  }
+}
+
+@keyframes bobbing_112n {
+  0%, 100% {
+    transform: scale(45%) translateY(0);
+  }
+  50% {
+    transform: scale(45%) translateY(-10px);
+  }
+}
+
+@keyframes bobbing_914n {
+  0%, 100% {
+    transform: scale(40%) translateY(0);
+  }
+  50% {
+    transform: scale(40%) translateY(-10px);
+  }
+}
+
+@keyframes bobbing_943n {
+  0%, 100% {
+    transform: scale(40%) translateY(0);
+  }
+  50% {
+    transform: scale(40%) translateY(-10px);
+  }
+}

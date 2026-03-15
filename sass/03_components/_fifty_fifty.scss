@@ -1,0 +1,126 @@
+.fifty_fifty {
+	text-align: center;
+}
+
+	.mixtape_cta,
+	.bodega_cta {
+
+	}
+
+
+
+	.mixtape_cta {
+		background-color: #000;
+		display: block;
+		padding: em(20px);
+		transition: color 300ms ease-out;
+
+		&:hover span, &:focus span {
+			transform: scale(1.1);
+		}
+	}
+
+		.mixtape_cta h3 {
+			font-size: em(130px);
+			line-height: 1;
+			margin: 40px auto 0;
+			max-width: 750px;
+			width: 100%;
+		}
+
+		.mixtape_cta h4 {
+			color: #fff;
+			font-size: em(35px);
+		}
+
+@media only screen and (min-width: em(700px)) {
+
+		.mixtape_cta h4 {
+			font-size: em(45px);
+		}
+
+}
+
+		.mixtape_cta span {
+			display: inline-block;
+			font-family: "liberator";
+			text-transform: uppercase;
+			transition: transform 200ms ease-out;
+			vertical-align: middle;
+		}
+
+			.play_button {
+				background: $yellow;
+				border-radius: 100%;
+				margin: 0 em(10px, 35px);
+				height: em(50px, 35px);
+				position: relative;
+				width: em(50px, 35px);
+			}
+
+			.play_button:after {
+				left: em(17px, 35px);
+				top: 50%;
+				border: solid transparent;
+				content: " ";
+				height: 0;
+				width: 0;
+				position: absolute;
+				pointer-events: none;
+			}
+
+			.play_button:after {
+				border-top: em(15px, 35px) solid transparent;
+				border-bottom: em(15px, 35px) solid transparent;
+				border-left: em(25px, 35px) solid #000;
+				margin-top: em(-15px, 35px);
+			}
+
+	.bodega_cta_wrap {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center, center;
+		display: flex;
+			align-items: center;
+			justify-content: center;
+		font-family: "liberator";
+		height: 100vw;
+		margin: 0;
+		overflow: hidden;
+		padding: em(100px) em(20px);
+		position: relative;
+
+		&:hover .bodega_cta, &:focus .bodega_cta {
+			transform: scale(1.1) rotate(20deg);
+		}
+	}
+
+		.bodega_cta {
+			background: $yellow;
+			display: inline-block;
+			line-height: 1;
+			margin: 0;
+			padding: 0.15em 20px 0;
+			transform: scale(1) rotate(20deg);
+			transition: transform 200ms ease-out;
+		}
+
+@media only screen and (min-width: em(900px)) {
+
+.fifty_fifty {
+	display: flex;
+		align-items: stretch;
+		align-content: center;
+}
+
+	.fifty_fifty a {
+		display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			justify-content: center;
+		flex: 1 0 50%;
+		height: 50vw;
+		max-height: em(600px);
+	}
+
+}

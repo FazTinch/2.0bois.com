@@ -1,0 +1,90 @@
+/*/////////////////////////////////////////////////
+// Typography Placeholders
+/////////////////////////////////////////////////*/
+%title_small {
+	font-size: 31px;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
+%title_large {
+	font-size: 37px;
+	text-transform: uppercase;
+}
+
+%title_xlarge {
+	text-transform: uppercase;
+}
+
+%content {
+	margin: 0 auto;
+	max-width: 768px;
+	width: 100%;
+}
+
+
+
+
+/*/////////////////////////////////////////////////
+// Layout Placeholders
+/////////////////////////////////////////////////*/
+
+
+
+
+
+
+/*/////////////////////////////////////////////////
+// Universal amongst projects
+/////////////////////////////////////////////////*/
+
+// hide from both screenreaders and browsers: h5bp.com/u
+%hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// hide only visually, but have it available for screenreaders: h5bp.com/v
+%visually_hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+// extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+%visually_hidden.focusable:active,
+%visually_hidden.focusable:focus {
+	clip: auto;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	position: static;
+	width: auto;
+}
+
+%clear__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+}
+
+%clear__link {
+	color: inherit;
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
+		color: inherit;
+	}
+}
