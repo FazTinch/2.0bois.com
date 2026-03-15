@@ -12,16 +12,14 @@
 		<!-- 2.0 BOIS favicon -->
 		<link rel="icon" href="https://ordinals.com/content/5d6f78ba1451ea20490e5609eaa9bc7e3dea9a1b2bd40d69d5f936fd25307579i0">
 
-		<!-- marx reset 4.1.1 -->
-		<link href="https://ordinals.com/content/81b5d8ee8191299df25944b7e4f21667665ede891a3bea5fd6a1c98a2d2f0882i0" rel="stylesheet" />
+		<!-- marx reset 4.1.1 — async to avoid render-blocking -->
+		<link rel="preload" href="https://ordinals.com/content/81b5d8ee8191299df25944b7e4f21667665ede891a3bea5fd6a1c98a2d2f0882i0" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 	</head>
 
 	<body id="content">
 
 		<script type="module">
-			import pako from 'https://ordinals.com/content/fba6f95fb1152db43304a27dce8cb8c65509eba6ab0b6958cedeb33e5f443077i0';
-
 			const base64GzipPackage = '__BLOB__';
 
 			// JS libraries inscribed on-chain that must be loaded before blob scripts run.
@@ -61,8 +59,11 @@
 
 			async function inflateContent() {
 			  try {
-				// Guarantee all inscription dependencies are executed before blob scripts run
-				await Promise.all(inscriptions.map(loadInscription));
+				// Load pako + all inscription dependencies in parallel
+				const [{ default: pako }] = await Promise.all([
+				  import('https://ordinals.com/content/fba6f95fb1152db43304a27dce8cb8c65509eba6ab0b6958cedeb33e5f443077i0'),
+				  ...inscriptions.map(loadInscription),
+				]);
 
 				const compressedData = base64ToArrayBuffer(base64GzipPackage);
 
