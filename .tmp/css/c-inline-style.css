@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Jost";
-  src: url("../includes/jost-300-light.woff2") format("woff2");
-  font-weight: 400;
+  src: url("../includes/jost-variable.woff2") format("woff2 supports variations"), url("../includes/jost-variable.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
 }
 /*! Marx v4.1.1 - The classless CSS reset (perfect for Communists) | MIT License | https://github.com/mblode/marx */
@@ -659,6 +659,7 @@ p {
 
 p, h2 {
   font-family: "Jost", system-ui, sans-serif;
+  font-weight: 300;
 }
 
 ::-moz-selection {

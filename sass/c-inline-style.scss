@@ -1,7 +1,8 @@
 @font-face {
 	font-family: "Jost";
-	src: url("../includes/jost-300-light.woff2") format("woff2");
-	font-weight: 400;
+	src: url("../includes/jost-variable.woff2") format("woff2 supports variations"),
+	     url("../includes/jost-variable.woff2") format("woff2");
+	font-weight: 100 900;
 	font-style: normal;
 }
 
